@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<title>WebGL Fluid Simulation</title>
+<meta name="description" content="A WebGL fluid simulation that works in mobile browsers. Rebuilt from Pavel DoGreat's WebGL Fluid Simulation (MIT)." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="WebGL Fluid Simulation" />
+<meta property="og:description" content="A WebGL fluid simulation that works in mobile browsers." />
+<meta property="og:image" content="./og.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="logo.png" />
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+
+  <div id="boot"><span>Loading…</span></div>
+
+  <header id="top">
+    <div class="brand">
+      <span class="name">Fluid</span>
+      <span class="sub">WebGL simulation</span>
+    </div>
+    <div class="bar">
+      <button id="splat-btn" type="button" title="Random splats">Splash</button>
+      <button id="shot-btn" type="button" title="Save a PNG">Save</button>
+      <button id="panel-toggle" type="button" aria-label="Toggle controls">Controls</button>
+      <button id="fs" type="button" aria-label="Toggle fullscreen">Full</button>
+    </div>
+  </header>
+
+  <div id="credit">
+    rebuilt from
+    <a href="https://github.com/PavelDoGreat/WebGL-Fluid-Simulation" target="_blank" rel="noreferrer">Pavel&nbsp;DoGreat · WebGL Fluid Simulation</a>
+  </div>
+
+  <aside id="panel" aria-label="Fluid controls">
+    <div id="panel-head">
+      <span>Fluid</span>
+      <button id="panel-close" type="button" aria-label="Close controls">×</button>
+    </div>
+    <div id="panel-body"></div>
+    <div id="panel-foot">
+      <button id="reset" type="button">Reset to original look</button>
+      <p class="keys">
+        <span><b>Drag</b> stir</span><span><b>Space</b> pause</span>
+        <span><b>F</b> full</span><span><b>R</b> reset</span><span><b>H</b> panel</span>
+      </p>
+      <p class="share">Settings live in the URL — copy it to share this look.</p>
+    </div>
+  </aside>
+
+  <script>
+    window.__errs = [];
+    window.addEventListener('error', function (e) { window.__errs.push(String(e.message || e.error)); });
+    window.addEventListener('unhandledrejection', function (e) { window.__errs.push('rejection: ' + String(e.reason)); });
+  </script>
+  <script src="./script.js"></script>
+  <script src="./controls.js"></script>
+</body>
+</html>
